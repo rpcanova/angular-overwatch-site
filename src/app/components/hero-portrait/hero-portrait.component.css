@@ -1,20 +1,21 @@
 .container__heroes {
+    width: 100%;
 	margin-top: 2rem;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
 	text-transform: uppercase;
 }
 
 .container__heroes ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .container__heroes ul li {
-	margin-right: 2rem;
-	margin-bottom: 2rem;
 	border: 2px solid #fbffff;
 	border-radius: .3rem;
 	transition: all .2s ease-in-out;
@@ -25,13 +26,15 @@
 }
 
 .container__heroes ul li a img {
-    vertical-align: bottom;
+    height: 225px;
+    display: block;
+    margin: 0 auto;
 	background-color: #c8ddf8;
 }
 
 .hero__text {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 1rem;
@@ -39,5 +42,5 @@
 }
 
 .hero__text span {
-    margin-right: 1rem;
+    margin-bottom: .5rem;
 }

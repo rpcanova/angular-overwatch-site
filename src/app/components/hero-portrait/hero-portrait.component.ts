@@ -5,36 +5,31 @@ import { HeroService } from '../../services/hero.service';
 @Component({
   selector: 'app-hero-portrait',
   templateUrl: './hero-portrait.component.html',
-  styleUrl: './hero-portrait.component.css'
+  styleUrls: ['./hero-portrait.component.css']
 })
 export class HeroPortraitComponent implements OnInit {
-    hero: HeroData
+    heroes: HeroData[] = []
 
     constructor(private service: HeroService) {
-        this.hero = {
-            key: '',
-            name: '',
-            portrait: '',
-            role: ''
-        }
+        // this.heroes = {
+        //     key: '',
+        //     name: '',
+        //     portrait: '',
+        //     role: ''
+        // }
     }
 
     ngOnInit(): void {
-        this.getHero('ana')
+        this.getAllHeroes()
     }
 
-    getHero(searchName: string) {
-        this.service.getHero(searchName).subscribe(
+    getAllHeroes() {
+        this.service.getAllHeroes().subscribe(
             {
-                next: (res) => {
-                    this.hero = {
-                        key: res.key,
-                        name: res.name,
-                        portrait: res.portrait,
-                        role: res.role
-                    }
+                next: (res: HeroData[]) => {
+                    this.heroes = res                 
                 },
-                error: (err) => console.log('not found')
+                error: (err) => console.log('Hero not found')
             }
         )
     }

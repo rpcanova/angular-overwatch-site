@@ -1,13 +1,15 @@
 <div class="container__heroes">
-    <ul>
-        <li>
-            <a href="">
-                <img [src]="hero.portrait" alt="hero" height="225" />
-                <div class="hero__text">
-                    <span>{{ hero.role }}</span>
-                    <h3>{{ hero.name }}</h3>
-                </div>
-            </a>
-        </li>
-    </ul>
+    <div class="heroes__wrapper">
+        <ul>
+            <li *ngFor="let hero of heroes">
+                <a href="">
+                    <img [src]="hero.portrait" alt="hero" height="225" />
+                    <div class="hero__text">
+                        <span>{{ hero.role }}</span>
+                        <h3>{{ hero.name }}</h3>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

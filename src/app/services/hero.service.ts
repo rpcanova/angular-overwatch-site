@@ -17,8 +17,8 @@ export class HeroService {
         this.baseURL = environment.overFastApi
     }
 
-    getHero(heroName: string): Observable<HeroData> {
-        this.heroData = this.http.get<HeroData>(`${this.baseURL}${heroName}`)
+    getAllHeroes(): Observable<HeroData[]> {
+        this.heroData = this.http.get<HeroData[]>(`${this.baseURL}`)
 
         return this.heroData
     }
