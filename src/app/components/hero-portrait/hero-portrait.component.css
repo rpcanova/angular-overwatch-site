@@ -9,6 +9,7 @@
 
 .container__heroes ul {
     margin-top: 1rem;
+    padding: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

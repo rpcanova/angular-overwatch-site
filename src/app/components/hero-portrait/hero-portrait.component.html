@@ -3,7 +3,7 @@
         <ul>
             <li *ngFor="let hero of heroes">
                 <a href="">
-                    <img [src]="hero.portrait" alt="hero" height="225" />
+                    <img [src]="hero.portrait" alt="{{ hero.name }}" height="225" />
                     <div class="hero__text">
                         <span>{{ hero.role }}</span>
                         <h3>{{ hero.name }}</h3>

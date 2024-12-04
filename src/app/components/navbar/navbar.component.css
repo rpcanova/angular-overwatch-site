@@ -19,4 +19,15 @@
 
 .navbar__list ul li {
     margin-right: 2rem;
+    font-weight: bold;
+}
+
+.navbar__list ul li a {
+    padding: 1rem;
+    transition: .3s ease;
+}
+
+.navbar__list ul li a:hover {
+    background-color: #0000000d;
+    border-radius: .5rem;
 }
