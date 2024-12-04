@@ -24,6 +24,7 @@
 
 .container__heroes ul li:hover {
 	transform: scale(1.1);
+    filter: brightness(1.05);
 }
 
 .container__heroes ul li a img {
