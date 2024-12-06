@@ -4,13 +4,14 @@
     </div>
 
     <div class="navbar__logo">
-        <a href="#"><img src="assets/icons/Overwatch_circle_logo.svg" alt="Overwatch Logo" height="50px"></a>
+        <a [routerLink]="['/']"><img src="assets/icons/Overwatch_circle_logo.svg" alt="Overwatch Logo" height="50px"></a>
     </div>
 
     <div class="navbar__list">
         <ul>
-            <li><a href="">Game Info</a></li>
-            <li><a href="">Heroes</a></li>
+            <li><a [routerLink]="['/']" [routerLinkActive]="['active']">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a [routerLink]="['/heroes']" [routerLinkActive]="['active']">Heroes</a></li>
             <li><a href="">Season</a></li>
             <li><a href="">News</a></li>
             <li><a href="https://www.linkedin.com/in/rafael-canova15/" target="_blank">LinkedIn</a></li>

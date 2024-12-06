@@ -9,20 +9,20 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroPortraitComponent,
-    NavbarComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeroPortraitComponent,
+        NavbarComponent,
+        HomeComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule
+    ],
+    providers: [
+        provideClientHydration()
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,6 +11,7 @@
 
 .navbar__hamburger-menu {
     display: none;
+    cursor: pointer;
 }
 
 .navbar__logo {
@@ -42,11 +43,7 @@
     border-radius: .5rem;
 }
 
-/* .container__navbar {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid red;
-} */
+.active {
+    background-color: #0000000d;
+    border-radius: .5rem;
+}
