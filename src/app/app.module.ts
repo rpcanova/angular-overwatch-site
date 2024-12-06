@@ -7,13 +7,15 @@ import { HeroPortraitComponent } from './components/hero-portrait/hero-portrait.
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { HeroesComponent } from './pages/heroes/heroes.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeroPortraitComponent,
         NavbarComponent,
-        HomeComponent
+        HomeComponent,
+        HeroesComponent
     ],
     imports: [
         BrowserModule,
@@ -22,7 +24,6 @@ import { HomeComponent } from './pages/home/home.component';
     ],
     providers: [
         provideClientHydration()
-    ],
-    bootstrap: [AppComponent]
+    ]
 })
 export class AppModule { }

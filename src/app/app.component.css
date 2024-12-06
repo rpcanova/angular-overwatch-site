@@ -1,0 +1,4 @@
+.container__root nav {
+    display: flex;
+    justify-content: center;
+}

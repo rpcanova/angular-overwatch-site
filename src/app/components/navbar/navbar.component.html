@@ -9,11 +9,11 @@
 
     <div class="navbar__list">
         <ul>
-            <li><a [routerLink]="['/']" [routerLinkActive]="['active']">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a [routerLink]="['/heroes']" [routerLinkActive]="['active']">Heroes</a></li>
+            <li><a [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+            <li><a [routerLink]="['/heroes']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Heroes</a></li>
             <li><a href="">Season</a></li>
             <li><a href="">News</a></li>
+            <li><a href="">About</a></li>
             <li><a href="https://www.linkedin.com/in/rafael-canova15/" target="_blank">LinkedIn</a></li>
             <li><a href="https://github.com/rpcanova/angular-overwatch-site.git" target="_blank">Github</a></li>
         </ul>

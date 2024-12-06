@@ -10,14 +10,7 @@ import { HeroService } from '../../services/hero.service';
 export class HeroPortraitComponent implements OnInit {
     heroes: HeroData[] = []
 
-    constructor(private service: HeroService) {
-        // this.heroes = {
-        //     key: '',
-        //     name: '',
-        //     portrait: '',
-        //     role: ''
-        // }
-    }
+    constructor(private service: HeroService) { }
 
     ngOnInit(): void {
         this.getAllHeroes()
