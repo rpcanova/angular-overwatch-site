@@ -1,6 +1,6 @@
-# AngularOverwatchSite
+# Overwatch Site
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+Overwatch site created in Angular based on official site layout
 
 ## Development server
 
