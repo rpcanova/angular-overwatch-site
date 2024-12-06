@@ -1,0 +1,43 @@
+@media (max-width: 1023px) {
+    .container__navbar {
+        width: 768px;
+        justify-content: space-between;
+    }
+
+    .navbar__hamburger-menu {
+        display: block;
+    }
+
+    .navbar__logo {
+        margin-left: 5rem;
+        margin-right: 0;
+    }
+
+    .navbar__list {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .container__navbar {
+        width: 625px;
+    }
+}
+
+@media (max-width: 639px) {
+    .container__navbar {
+        width: 500px;
+    }
+}
+
+@media (max-width: 519px) {
+    .container__navbar {
+        width: 400px;
+    }
+}
+
+@media (max-width: 424px) {
+    .container__navbar {
+        width: 300px;
+    }
+}

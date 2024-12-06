@@ -3,3 +3,8 @@
     background-color: #5f96d6;
     overflow-x: hidden;
 }
+
+.container__home nav {
+    display: flex;
+    justify-content: center;
+}

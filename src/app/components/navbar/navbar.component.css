@@ -1,19 +1,29 @@
-* {
+.container__navbar {
+    margin-top: 2rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background-color: #ebeff4;
+    border-radius: .6rem;
 }
 
-.container__navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 1rem;
-    padding: 2rem;
-    border-radius: .6rem;
+.navbar__hamburger-menu {
+    display: none;
+}
+
+.navbar__logo {
+    margin-right: 2rem;
+}
+
+.navbar__logo a img {
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .navbar__list ul {
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
 
@@ -31,3 +41,12 @@
     background-color: #0000000d;
     border-radius: .5rem;
 }
+
+/* .container__navbar {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid red;
+} */
