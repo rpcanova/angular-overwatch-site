@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeroPortraitComponent } from './hero-portrait/hero-portrait.component';
 import { FilterButtonComponent } from './filter-button/filter-button.component';
 import { HeroesComponent } from './heroes.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +14,8 @@ import { HeroesComponent } from './heroes.component';
         HeroesComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule
     ],
     exports: [
         HeroesComponent,
