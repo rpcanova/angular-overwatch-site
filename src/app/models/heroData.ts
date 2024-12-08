@@ -3,4 +3,7 @@ export type HeroData = {
     name: string
     portrait: string
     role: string
+    story: {
+        summary: string
+    }
 }

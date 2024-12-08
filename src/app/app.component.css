@@ -1,4 +1,14 @@
-.container__root nav {
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.root__navbar nav {
     display: flex;
     justify-content: center;
+}
+
+main {
+    flex: 1;
 }

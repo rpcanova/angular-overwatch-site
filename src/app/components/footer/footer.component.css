@@ -1,0 +1,15 @@
+.container__footer {
+    width: 100%;
+    height: 4rem;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #ebeef3;
+}
+
+.container__footer p {
+    font-family: 'Helvetica', sans-serif;
+}

@@ -2,7 +2,7 @@
     <div class="heroes__wrapper">
         <ul>
             <li *ngFor="let hero of heroes">
-                <a [routerLink]="['heroes', hero.key]">
+                <a [routerLink]="[hero.key, 'story']">
                     <img [src]="hero.portrait" alt="{{ hero.name }}" height="225" />
                     <div class="hero__text">
                         <span>{{ hero.role }}</span>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroData } from '../../models/heroData';
-import { HeroService } from '../../services/hero.service';
+import { HeroData } from '../../../models/heroData';
+import { HeroService } from '../../../services/hero.service';
 
 @Component({
   selector: 'app-hero-portrait',
