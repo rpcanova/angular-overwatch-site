@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroPortraitComponent } from './pages/heroes/hero-portrait/hero-portrait.component';
 import { HomeComponent } from './pages/home/home.component';
+import { HeroesComponent } from './pages/heroes/heroes.component';
 
 const routes: Routes = [
     {
@@ -12,11 +12,11 @@ const routes: Routes = [
 
     {
         path: 'heroes',
-        component: HeroPortraitComponent,
+        component: HeroesComponent,
         children: [
             {
                 path: ':key/story',
-                component: HeroPortraitComponent,
+                component: HeroesComponent,
                 pathMatch: 'full'
             }
         ]
