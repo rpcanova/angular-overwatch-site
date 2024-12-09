@@ -1,4 +1,5 @@
 export const environment = {
     production: false,
-    overFastApi: 'https://overfast-api.tekrop.fr/heroes/'
+    overFastApiHeroes: 'https://overfast-api.tekrop.fr/heroes/',
+    overFastApiMaps: 'https://overfast-api.tekrop.fr/maps'
 };

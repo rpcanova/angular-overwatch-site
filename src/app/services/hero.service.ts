@@ -14,7 +14,7 @@ export class HeroService {
     constructor(
         private http: HttpClient
     ) {
-        this.baseURL = environment.overFastApi
+        this.baseURL = environment.overFastApiHeroes
     }
 
     getAllHeroes(): Observable<HeroData[]> {
