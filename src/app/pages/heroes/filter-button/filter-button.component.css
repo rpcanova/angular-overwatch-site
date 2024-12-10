@@ -3,6 +3,7 @@
     margin-right: 1rem;
     padding: 1rem;
     border: 2px solid #fbffff;
+    border-radius: .3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,9 +14,15 @@
     opacity: .8;
     cursor: pointer;
     transition: all .3s ease;
+    position: relative;
 }
 
 .container__filter-button button:hover {
+    opacity: 1;
+    background-color: #fff;
+}
+
+.container__filter-button button.active {
     opacity: 1;
     background-color: #fff;
 }

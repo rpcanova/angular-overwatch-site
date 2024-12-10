@@ -9,9 +9,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StoryComponent } from './pages/story/story.component';
 import { HeroPortraitComponent } from './pages/heroes/hero-portrait/hero-portrait.component';
-import { FilterButtonComponent } from './pages/heroes/filter-button/filter-button.component';
-import { HeroesComponent } from './pages/heroes/heroes.component';
 import { MapsComponent } from './pages/maps/maps.component';
+import { HeroesComponent } from './pages/heroes/heroes.component';
+import { FilterButtonComponent } from './pages/heroes/filter-button/filter-button.component';
 
 @NgModule({
     declarations: [
@@ -19,8 +19,8 @@ import { MapsComponent } from './pages/maps/maps.component';
         NavbarComponent,
         HomeComponent,
         HeroesComponent,
-        HeroPortraitComponent,
         FilterButtonComponent,
+        HeroPortraitComponent,
         FooterComponent,
         StoryComponent,
         MapsComponent,
@@ -32,6 +32,7 @@ import { MapsComponent } from './pages/maps/maps.component';
     ],
     providers: [
         provideClientHydration()
-    ]
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

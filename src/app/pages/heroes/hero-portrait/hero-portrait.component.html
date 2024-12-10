@@ -1,7 +1,7 @@
 <div class="container__heroes">
     <div class="heroes__wrapper">
         <ul>
-            <li *ngFor="let hero of heroes">
+            <li *ngFor="let hero of filteredHeroes">
                 <a [routerLink]="[hero.key, 'story']">
                     <img [src]="hero.portrait" alt="{{ hero.name }}" height="225" />
                     <div class="hero__text">

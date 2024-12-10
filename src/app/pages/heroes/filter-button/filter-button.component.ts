@@ -1,11 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'app-filter-button',
     templateUrl: './filter-button.component.html',
     styleUrl: './filter-button.component.css'
 })
-export class FilterButtonComponent {
-    @Input()
-    typeFilter: string = ""
+export class FilterButtonComponent implements OnInit {
+    @Input() typeFilter: string = ''
+    @Input() isActive: boolean = false
+    @Output() filterChange = new EventEmitter<string>()
+
+    ngOnInit(): void {
+    }
+
+    applyFilter() {
+        this.filterChange.emit(this.typeFilter.toUpperCase())
+    }
 }

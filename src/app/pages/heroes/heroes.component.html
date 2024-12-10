@@ -1,10 +1,11 @@
 <div class="container__heroes">
     <div class="heroes__filter">
-        <app-filter-button typeFilter="ALL"></app-filter-button>
-        <app-filter-button typeFilter="TANK"></app-filter-button>
-        <app-filter-button typeFilter="DAMAGE"></app-filter-button>
-        <app-filter-button typeFilter="SUPPORT"></app-filter-button>
+        <app-filter-button *ngFor="let filter of ['ALL', 'TANK', 'DAMAGE', 'SUPPORT']"
+        [typeFilter]="filter"
+        [isActive]="selectedFilter === filter"
+        (filterChange)="handleFilterChange($event)"
+        ></app-filter-button>
     </div>
 
-    <app-hero-portrait></app-hero-portrait>
+    <app-hero-portrait [activeFilter]="selectedFilter"></app-hero-portrait>
 </div>

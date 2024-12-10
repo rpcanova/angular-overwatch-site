@@ -18,8 +18,6 @@ export class HeroService {
     }
 
     getAllHeroes(): Observable<HeroData[]> {
-        this.heroData = this.http.get<HeroData[]>(`${this.baseURL}`)
-
-        return this.heroData
+        return this.http.get<HeroData[]>(`${this.baseURL}`)
     }
 }
