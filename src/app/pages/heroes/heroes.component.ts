@@ -11,11 +11,9 @@ export class HeroesComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
-        console.log("Initial activeFilter:", this.selectedFilter)
     }
 
     handleFilterChange(filter: string) {
-        console.log('Filter selected:', filter)
         this.selectedFilter = filter
     }
 }

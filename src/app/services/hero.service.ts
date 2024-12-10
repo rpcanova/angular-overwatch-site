@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class HeroService {
     private baseURL: string = ""
-    private heroData: HeroData | any
 
     constructor(
         private http: HttpClient
