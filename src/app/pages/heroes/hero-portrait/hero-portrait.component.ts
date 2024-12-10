@@ -28,7 +28,6 @@ export class HeroPortraitComponent implements OnInit, OnChanges {
         this.service.getAllHeroes().subscribe(
             {
                 next: (res: HeroData[]) => {
-                    console.log('Heroes received:', res);
                     this.heroes = res
                     this.filterHeroes()
                 },
