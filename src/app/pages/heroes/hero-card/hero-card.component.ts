@@ -3,11 +3,11 @@ import { HeroData } from '../../../models/heroData';
 import { HeroService } from '../../../services/hero.service';
 
 @Component({
-    selector: 'app-hero-portrait',
-    templateUrl: './hero-portrait.component.html',
-    styleUrls: ['./hero-portrait.component.css']
+    selector: 'app-hero-card',
+    templateUrl: './hero-card.component.html',
+    styleUrls: ['./hero-card.component.css']
 })
-export class HeroPortraitComponent implements OnInit, OnChanges {
+export class HeroCardComponent implements OnInit, OnChanges {
     heroes: HeroData[] = []
     filteredHeroes: HeroData[] = []
     @Input() activeFilter: string = 'ALL'

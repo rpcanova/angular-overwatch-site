@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
+import { StoryComponent } from './pages/story/story.component';
+import { MapsComponent } from './pages/maps/maps.component';
 
 const routes: Routes = [
     {
@@ -16,10 +18,16 @@ const routes: Routes = [
         children: [
             {
                 path: ':key/story',
-                component: HeroesComponent,
+                component: StoryComponent,
                 pathMatch: 'full'
             }
         ]
+    },
+
+    {
+        path: 'maplist',
+        component: MapsComponent,
+        pathMatch: 'full'
     }
 ];
 

@@ -8,10 +8,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StoryComponent } from './pages/story/story.component';
-import { HeroPortraitComponent } from './pages/heroes/hero-portrait/hero-portrait.component';
+import { HeroCardComponent } from './pages/heroes/hero-card/hero-card.component';
 import { MapsComponent } from './pages/maps/maps.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
 import { FilterButtonComponent } from './pages/heroes/filter-button/filter-button.component';
+import { TitleComponent } from './components/title/title.component';
+import { SectionComponent } from './components/section/section.component';
 
 @NgModule({
     declarations: [
@@ -20,10 +22,12 @@ import { FilterButtonComponent } from './pages/heroes/filter-button/filter-butto
         HomeComponent,
         HeroesComponent,
         FilterButtonComponent,
-        HeroPortraitComponent,
+        HeroCardComponent,
         FooterComponent,
         StoryComponent,
         MapsComponent,
+        TitleComponent,
+        SectionComponent,
     ],
     imports: [
         BrowserModule,

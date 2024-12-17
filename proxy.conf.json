@@ -1,8 +1,8 @@
 {
-    "/api": {
-      "target": "https://overfast-api.tekrop.fr",
-      "secure": false,
-      "changeOrigin": true,
-      "logLevel": "debug"
-    }
-  }
+	"/api": {
+		"target": "https://overfast-api.tekrop.fr",
+		"secure": false,
+		"changeOrigin": true,
+		"logLevel": "debug"
+	}
+}
