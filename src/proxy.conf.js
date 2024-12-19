@@ -2,7 +2,8 @@ const PROXY_CONFIG = [
     {
         context: [
             '/api',
-            '/heroes'
+            '/heroes',
+            '/maps'
         ],
         target: "https://overfast-api.tekrop.fr/",
         secure: false,

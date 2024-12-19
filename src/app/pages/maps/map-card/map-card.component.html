@@ -1,0 +1,12 @@
+<div class="container__map-card">
+    <ul>
+        <li *ngFor="let map of filteredMaps">
+            <img [src]="map.screenshot" alt="{{ map.name }}" height="100">
+
+            <div class="map__description">
+                <h4>{{ map.name }}</h4>
+                <span>{{ map.location }}</span>
+            </div>
+        </li>
+    </ul>
+</div>

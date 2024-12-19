@@ -1,15 +1,24 @@
+.container__filter-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .container__filter-button button {
-    width: 150px;
+    max-width: 150px;
+    min-width: 100px;
     margin-right: 1rem;
     padding: 1rem;
     border: 2px solid #fbffff;
     border-radius: .3rem;
     display: flex;
+    flex: 1 1 calc(25% - 1rem);
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: #c4daf2;
-    font-size: 20px;
+    font-size: 10px;
     font-weight: bold;
     opacity: .8;
     cursor: pointer;

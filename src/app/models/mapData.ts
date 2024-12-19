@@ -1,5 +1,6 @@
-export type mapData = {
+export type MapData = {
     name: string,
     screenshot: string,
-    location: string
+    location: string,
+    gamemodes: string[]
 }

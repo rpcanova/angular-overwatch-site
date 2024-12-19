@@ -16,4 +16,8 @@ export class FilterButtonComponent implements OnInit {
     applyFilter() {
         this.filterChange.emit(this.typeFilter.toUpperCase())
     }
+
+    formatTypeFilter(filter: string): string {
+        return filter.replace(/-/g, ' ')
+    }
 }
