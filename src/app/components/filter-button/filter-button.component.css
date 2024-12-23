@@ -6,21 +6,22 @@
 }
 
 .container__filter-button button {
-    max-width: 150px;
-    min-width: 100px;
+    min-width: 80px;
     margin-right: 1rem;
     padding: 1rem;
     border: 2px solid #fbffff;
     border-radius: .3rem;
     display: flex;
     flex: 1 1 calc(25% - 1rem);
+    white-space: nowrap;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: #c4daf2;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: bold;
     opacity: .8;
+    overflow: hidden;
     cursor: pointer;
     transition: all .3s ease;
     position: relative;
