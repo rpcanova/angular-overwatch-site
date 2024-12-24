@@ -20,7 +20,7 @@
     margin-right: 2rem;
 }
 
-::ng-deep img {
+::ng-deep .section__image img {
     width: 500px;
     height: 375px;
     border-radius: .5rem;

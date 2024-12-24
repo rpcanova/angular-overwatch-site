@@ -1,0 +1,24 @@
+@media (max-width: 1065px) {
+    .container__section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .section__about {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section__image {
+        margin-bottom: 1rem;
+    }
+
+    ::ng-deep .section__image img {
+        width: 100%;
+        height: 100%;
+        margin-left: 1rem;
+    }
+}
