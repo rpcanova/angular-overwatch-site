@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
-import { StoryComponent } from './pages/story/story.component';
+import { HeroDetailsComponent } from './pages/heroes/hero-details/hero-details.component';
 import { MapsComponent } from './pages/maps/maps.component';
 
 const routes: Routes = [
@@ -17,8 +17,8 @@ const routes: Routes = [
         component: HeroesComponent,
         children: [
             {
-                path: ':key/story',
-                component: StoryComponent,
+                path: ':key',
+                component: HeroDetailsComponent,
                 pathMatch: 'full'
             }
         ]

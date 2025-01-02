@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-heroes',
     templateUrl: './heroes.component.html',
-    styleUrl: './heroes.component.css'
+    styleUrls: ['./heroes.component.css', './heroes.responsive.component.css']
 })
 export class HeroesComponent implements OnInit {
     selectedFilter: string = 'ALL'

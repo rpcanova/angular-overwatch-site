@@ -1,0 +1,10 @@
+@media (max-width: 571px) {
+    .heroes__filter {
+        flex-direction: column;
+    }
+
+    ::ng-deep .heroes__filter app-filter-button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
