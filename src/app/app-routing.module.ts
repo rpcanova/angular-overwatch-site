@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { HeroesComponent } from './pages/heroes/heroes.component';
-import { HeroDetailsComponent } from './pages/heroes/hero-details/hero-details.component';
 import { MapsComponent } from './pages/maps/maps.component';
+import { PlayersComponent } from './pages/players/players.component';
 
 const routes: Routes = [
     {
@@ -14,20 +13,24 @@ const routes: Routes = [
 
     {
         path: 'herolist',
-        component: HeroesComponent,
-        children: [
-            {
-                path: ':key',
-                component: HeroDetailsComponent,
-                pathMatch: 'full'
-            }
-        ]
+        loadChildren: () => import('./pages/heroes/heroes.module').then(m => m.HeroesModule)
     },
 
     {
         path: 'maplist',
         component: MapsComponent,
         pathMatch: 'full'
+    },
+
+    {
+        path: 'playerlist',
+        component: PlayersComponent,
+        pathMatch: 'full'
+    },
+
+    {
+        path: '**',
+        redirectTo: ''
     }
 ];
 

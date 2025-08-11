@@ -7,34 +7,28 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HeroCardComponent } from './pages/heroes/hero-card/hero-card.component';
 import { MapsComponent } from './pages/maps/maps.component';
-import { HeroesComponent } from './pages/heroes/heroes.component';
-import { FilterButtonComponent } from './components/filter-button/filter-button.component';
 import { TitleComponent } from './components/title/title.component';
 import { SectionComponent } from './components/section/section.component';
 import { MapCardComponent } from './pages/maps/map-card/map-card.component';
-import { HeroDetailsComponent } from './pages/heroes/hero-details/hero-details.component';
+import { PlayersComponent } from './pages/players/players.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavbarComponent,
         HomeComponent,
-        HeroesComponent,
-        FilterButtonComponent,
-        HeroCardComponent,
         FooterComponent,
         MapsComponent,
-        TitleComponent,
-        SectionComponent,
         MapCardComponent,
-        HeroDetailsComponent,
+        PlayersComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        SharedModule
     ],
     providers: [
         provideClientHydration()
