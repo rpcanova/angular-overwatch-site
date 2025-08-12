@@ -1,0 +1,360 @@
+/* Loading State */
+.hero-details__loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-details__loading p {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Error State */
+.hero-details__error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 2rem;
+    color: #ffffff;
+}
+
+.error__icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-details__error h2 {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+}
+
+.hero-details__error p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+/* Hero Content */
+.hero-details__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+/* Hero Header */
+.hero-content__header {
+    margin-bottom: 3rem;
+}
+
+.hero-content__basic-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.basic-info__portrait {
+    flex-shrink: 0;
+}
+
+.basic-info__portrait img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.basic-info__portrait img:hover {
+    transform: scale(1.05);
+}
+
+.basic-info__details {
+    flex: 1;
+}
+
+.details__name {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.details__role {
+    margin-bottom: 1rem;
+}
+
+/* Story Section */
+.hero-details__story {
+    margin-bottom: 3rem;
+}
+
+.story__header {
+    margin-bottom: 2rem;
+}
+
+.story__header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #00d4ff;
+}
+
+.story__divider {
+    margin-bottom: 2rem;
+}
+
+.story__content {
+    padding: 2rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.story__content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+/* Story Video */
+.story__video {
+    margin-top: 2rem;
+}
+
+.story__video h3 {
+    color: #00d4ff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.video__container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.youtube-video {
+    height: 450px;
+    border: none;
+}
+
+/* Abilities Section */
+.hero-details__abilities {
+    margin-bottom: 3rem;
+}
+
+.abilities__header {
+    margin-bottom: 2rem;
+}
+
+.abilities__header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #00d4ff;
+}
+
+.abilities__divider {
+    margin-bottom: 2rem;
+}
+
+.abilities__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.ability__card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ability__card:hover {
+    transform: translateY(-5px);
+}
+
+.ability__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.ability__icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.ability__name {
+    color: #00d4ff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.ability__description {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.ability__video {
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.ability-video {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+/* Stats Section (Fallback) */
+.hero-details__stats {
+    margin-bottom: 3rem;
+}
+
+.stats__header {
+    margin-bottom: 2rem;
+}
+
+.stats__header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #00d4ff;
+}
+
+.stats__divider {
+    margin-bottom: 2rem;
+}
+
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stats__card {
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.stats__card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-card__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.stats-card__title {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.stats-card__description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-content__basic-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .details__name {
+        font-size: 2rem;
+    }
+    
+    .basic-info__portrait img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .abilities__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ability__card {
+        height: auto;
+        min-height: 350px;
+    }
+    
+    .video__container {
+        max-width: 100%;
+    }
+    
+    .youtube-video {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .details__name {
+        font-size: 1.5rem;
+    }
+    
+    .story__header h2,
+    .abilities__header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .story__content {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .ability__card {
+        padding: 1.5rem;
+        min-height: 300px;
+    }
+    
+    .ability__header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .ability-video {
+        height: 150px;
+    }
+    
+    .youtube-video {
+        height: 200px;
+    }
+}
+

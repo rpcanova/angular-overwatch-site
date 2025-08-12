@@ -1,17 +1,38 @@
-<app-section>
-    <app-title [title]="'Overview'"></app-title>
-    <img src="assets/images/overwatch-image.jpg" alt="">
-    <p>
-        Overwatch 2 is a free-to-play multiplayer team-based first-person shooter developed and published by Blizzard Entertainment.
-        It was released on May 24, 2016 for PlayStation 4, Windows, Xbox One, on October 15, 2019 for the
-        Nintendo Switch, and August 10, 2023 on PlayStation 5 and Xbox Series X/S.
-    </p>
-    
-    <p>
-        Overwatch takes place on a near-future Earth, some time in the mid 2070s. Some thirty years before, robots
-        turned against humanity in what became known as the Omnic Crisis. This eventually led to the formation of an
-        elite strike team, who finally brought an end to the war. This team was the beginning of Overwatch, an
-        international task force which tried to maintain global stability for two decades, until corruption tore it apart.
-        Though Overwatch was disbanded, new crises are looming, and the world still needs heroes.
-    </p>
-</app-section>
+<div class="container__home page-container">
+    <div class="home__content glass-card">
+        <div class="home__header">
+            <h1 class="home__title gradient-text">Welcome to Overwatch 2</h1>
+            <p class="home__subtitle">Discover the world of heroes and epic battles</p>
+            <div class="home__divider gradient-divider"></div>
+        </div>
+
+        <div class="home__about">
+            <div class="about__image">
+                <img src="assets/images/overwatch-image.jpg" alt="Overwatch 2 Game">
+            </div>
+            
+            <div class="about__text">
+                <p class="glass-card--small">
+                    Overwatch 2 is a free-to-play multiplayer team-based first-person shooter developed and published by Blizzard Entertainment.
+                    It was released on May 24, 2016 for PlayStation 4, Windows, Xbox One, on October 15, 2019 for the
+                    Nintendo Switch, and August 10, 2023 on PlayStation 5 and Xbox Series X/S.
+                </p>
+                
+                <p class="glass-card--small">
+                    Overwatch takes place on a near-future Earth, some time in the mid 2070s. Some thirty years before, robots
+                    turned against humanity in what became known as the Omnic Crisis. This eventually led to the formation of an
+                    elite strike team, who finally brought an end to the war. This team was the beginning of Overwatch, an
+                    international task force which tried to maintain global stability for two decades, until corruption tore it apart.
+                    Though Overwatch was disbanded, new crises are looming, and the world still needs heroes.
+                </p>
+            </div>
+        </div>
+
+        <app-cta 
+            title="Ready to join the fight?"
+            description="Explore heroes, maps, and become part of the Overwatch universe!"
+            buttonText="Play Now"
+            [buttonAction]="onPlayNowClick">
+        </app-cta>
+    </div>
+</div>

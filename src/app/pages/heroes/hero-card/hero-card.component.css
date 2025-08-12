@@ -1,11 +1,11 @@
 .container__hero-card {
     width: 100%;
-	margin-top: 2rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .container__hero-card ul {
@@ -18,32 +18,42 @@
 }
 
 .container__hero-card ul li {
-	border: 2px solid #fbffff;
-	border-radius: .3rem;
-	transition: all .2s ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: .3rem;
+    transition: all .2s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .container__hero-card ul li:hover {
-	transform: scale(1.1);
+    transform: scale(1.1);
     filter: brightness(1.05);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .container__hero-card ul li a img {
     height: 225px;
     display: block;
     margin: 0 auto;
-	background-color: #c8ddf8;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .hero__description {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem;
-	background-color: #edf4fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
 }
 
 .hero__description span {
     margin-bottom: .5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero__description h3 {
+    color: #ffffff;
+    font-weight: bold;
 }

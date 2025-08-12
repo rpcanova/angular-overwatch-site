@@ -19,4 +19,8 @@ export class HeroService {
     getAllHeroes(): Observable<HeroData[]> {
         return this.http.get<HeroData[]>(`${this.baseURL}`)
     }
+
+    getHeroByKey(key: string): Observable<HeroData> {
+        return this.http.get<HeroData>(`${this.baseURL}${key}`)
+    }
 }
