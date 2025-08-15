@@ -22,7 +22,7 @@
     line-height: 1.6;
 }
 
-/* Responsividade */
+/* Responsiveness */
 @media (max-width: 768px) {
     .cta {
         padding: 2rem 1rem;

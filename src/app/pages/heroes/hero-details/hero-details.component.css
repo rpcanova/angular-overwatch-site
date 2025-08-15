@@ -183,7 +183,6 @@
     background: rgba(255, 255, 255, 0.08);
     border-radius: 15px;
     transition: transform 0.3s ease;
-    height: 450px;
     display: flex;
     flex-direction: column;
 }
@@ -220,7 +219,7 @@
     line-height: 1.6;
     margin-bottom: 1.5rem;
     flex: 1;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .ability__video {

@@ -5,10 +5,11 @@ import { TitleComponent } from '../components/title/title.component';
 import { SectionComponent } from '../components/section/section.component';
 import { CtaComponent } from '../components/cta/cta.component';
 import { SafePipe } from './safe.pipe';
+import { CtaButtonComponent } from './cta-button/cta-button.component';
 
 @NgModule({
 	declarations: [
-		FilterButtonComponent, TitleComponent, SectionComponent, CtaComponent, SafePipe
+		FilterButtonComponent, TitleComponent, SectionComponent, CtaComponent, SafePipe, CtaButtonComponent
 	],
 	imports: [CommonModule],
 	exports: [FilterButtonComponent, TitleComponent, SectionComponent, CtaComponent, SafePipe],
