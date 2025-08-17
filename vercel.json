@@ -1,13 +1,13 @@
 {
 	"rewrites": [
 		{
-			"source": "/api/:match*",
+			"source": "/:match*",
 			"destination": "https://overfast-api.tekrop.fr/:match*"
 		}
 	],
 	"headers": [
 		{
-			"source": "/api/(.*)",
+			"source": "/(.*)",
 			"headers": [
 				{ "key": "Access-Control-Allow-Origin", "value": "*" },
 				{ "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS" },
