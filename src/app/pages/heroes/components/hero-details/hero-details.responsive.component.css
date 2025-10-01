@@ -1,0 +1,68 @@
+@media (max-width: 768px) {
+    .hero-content__basic-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .details__name {
+        font-size: 2rem;
+    }
+    
+    .basic-info__portrait img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .abilities__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ability__card {
+        height: auto;
+        min-height: 350px;
+    }
+    
+    .video__container {
+        max-width: 100%;
+    }
+    
+    .youtube-video {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .details__name {
+        font-size: 1.5rem;
+    }
+    
+    .story__header h2,
+    .abilities__header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .story__content {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .ability__card {
+        padding: 1.5rem;
+        min-height: 300px;
+    }
+    
+    .ability__header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .ability-video {
+        height: 150px;
+    }
+    
+    .youtube-video {
+        height: 200px;
+    }
+}

@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { MapsComponent } from './pages/maps/maps.component';
-import { PlayersComponent } from './pages/players/players.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent,
-        pathMatch: 'full'
+        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
     },
 
     {
@@ -18,14 +14,17 @@ const routes: Routes = [
 
     {
         path: 'maplist',
-        component: MapsComponent,
-        pathMatch: 'full'
+        loadChildren: () => import('./pages/maps/maps.module').then(m => m.MapsModule)
     },
 
     {
         path: 'playerlist',
-        component: PlayersComponent,
-        pathMatch: 'full'
+        loadChildren: () => import('./pages/players/players.module').then(m => m.PlayersModule)
+    },
+
+    {
+        path: 'players',
+        loadChildren: () => import('./pages/players/players.module').then(m => m.PlayersModule)
     },
 
     {

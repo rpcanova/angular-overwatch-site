@@ -1,0 +1,35 @@
+/* Navigation Tabs */
+.profile__nav {
+	padding: 0;
+	overflow: hidden;
+}
+
+.nav__tabs {
+	display: flex;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.nav__tab {
+	flex: 1;
+	padding: 1rem;
+	background: transparent;
+	border: none;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 0.9rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.nav__tab:hover {
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+}
+
+.nav__tab--active {
+	background: #00d4ff;
+	color: #000000;
+	font-weight: 700;
+}

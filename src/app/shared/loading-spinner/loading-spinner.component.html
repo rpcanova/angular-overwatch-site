@@ -1,0 +1,4 @@
+<div class="loading-spinner-container" [class.inline]="inline">
+    <div class="loading-spinner" [class]="'loading-spinner--' + size"></div>
+    <p *ngIf="showMessage && message" class="loading-message">{{ message }}</p>
+</div>

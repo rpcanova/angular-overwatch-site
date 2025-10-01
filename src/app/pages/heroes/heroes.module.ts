@@ -3,33 +3,24 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HeroesComponent } from './heroes.component';
-import { HeroCardComponent } from './hero-card/hero-card.component';
-import { HeroDetailsComponent } from './hero-details/hero-details.component';
+import { HeroCardComponent } from './components/hero-card/hero-card.component';
+import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { SharedModule } from '../../shared/shared.module';
 
 const heroesRoutes: Routes = [
-  {
-    path: '',
-    component: HeroesComponent
-  },
+	{
+		path: '',
+		component: HeroesComponent,
+	},
 
-  {
-    path: ':key',
-    component: HeroDetailsComponent
-  }
-]
+	{
+		path: ':key',
+		component: HeroDetailsComponent,
+	},
+];
 
 @NgModule({
-  declarations: [
-    HeroesComponent,
-    HeroCardComponent,
-    HeroDetailsComponent,
-
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(heroesRoutes),
-    SharedModule
-  ]
+	declarations: [HeroesComponent, HeroCardComponent, HeroDetailsComponent],
+	imports: [CommonModule, RouterModule.forChild(heroesRoutes), SharedModule],
 })
-export class HeroesModule { }
+export class HeroesModule {}

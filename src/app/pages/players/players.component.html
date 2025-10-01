@@ -1,1 +1,272 @@
-<p>players works!</p>
+<div class="container__players page-container">
+	<!-- Search Section - Only show on search page -->
+	<div *ngIf="isSearchPage" class="players__search glass-card">
+		<div class="search__header">
+			<h2>Player Search</h2>
+			<p>Enter a BattleTag to view player statistics</p>
+		</div>
+
+		<div class="search__form">
+			<div class="form__input-group">
+				<input 
+					type="text" 
+					[(ngModel)]="searchInput" 
+					placeholder="Username#1234"
+					class="search__input"
+					(keyup.enter)="searchPlayer()"
+					(input)="onBattletagInput($event)"
+					(keydown)="onBattletagKeyDown($event)"
+					(keyup)="onBattletagKeyUp($event)"
+					(focus)="onBattletagFocus($event)"
+					(blur)="onBattletagBlur($event)"
+					maxlength="26"
+				>
+				<button 
+					class="search__button btn-primary" 
+					(click)="searchPlayer()"
+					[disabled]="loading"
+				>
+					<span *ngIf="!loading">Search</span>
+					<app-loading-spinner 
+						*ngIf="loading" 
+						size="small" 
+						[showMessage]="false"
+						[inline]="true">
+					</app-loading-spinner>
+				</button>
+			</div>
+			
+			<div class="search__example">
+				<small>Example: MyUserName#1234 or MyUserName#12345</small>
+			</div>
+		</div>
+	</div>
+
+	<!-- Loading State -->
+	<div *ngIf="loading" class="players__loading glass-card">
+		<app-loading-spinner 
+			size="medium" 
+			message="Searching for player..." 
+			[showMessage]="true">
+		</app-loading-spinner>
+	</div>
+
+	<!-- Error State -->
+	<div *ngIf="error" class="players__error glass-card">
+		<h3>Player Not Found</h3>
+		<p>{{ errorMessage }}</p>
+		<button class="btn-secondary" (click)="clearError()">Try Again</button>
+	</div>
+
+	<!-- Player Profile - Only show when player data exists -->
+	<div *ngIf="player && !loading && !error" class="players__profile">
+
+		<!-- Platform Navigation -->
+		<app-profile-nav 
+			[tabs]="['all', 'pc', 'console']"
+			[activeTab]="selectedPlatform"
+			[tabLabels]="{'all': 'ALL', 'pc': 'PC', 'console': 'CONSOLE'}"
+			(tabChange)="setPlatform($event)">
+		</app-profile-nav>
+
+		<!-- Mode Navigation -->
+		<app-profile-nav 
+			[tabs]="['quickplay', 'competitive']"
+			[activeTab]="selectedMode"
+			[tabLabels]="{'quickplay': 'QUICK PLAY', 'competitive': 'COMPETITIVE'}"
+			(tabChange)="setMode($event)">
+		</app-profile-nav>
+
+		<!-- Player Header -->
+		<div class="profile__header glass-card" 
+			[style.background-image]="player.summary.namecard ? 'url(' + player.summary.namecard + ')' : 'none'"
+			[style.background-size]="'cover'"
+			[style.background-position]="'center'"
+			[style.background-repeat]="'no-repeat'">
+			<div class="header__overlay"></div>
+			
+			<div class="header__content">
+				<div class="header__left">
+					<div class="header__avatar">
+						<img 
+							[src]="player.summary.avatar || 'assets/images/default-avatar.jpg'" 
+							[alt]="player.summary.username"
+							class="avatar__image"
+							(error)="onImageError($event)"
+						>
+					</div>
+				</div>
+				
+				<div class="header__center">
+					<h1 class="header__username">{{ player.summary.username }}</h1>
+					<div class="header__title" *ngIf="player.summary.title">
+						<span class="title__text">{{ player.summary.title }}</span>
+					</div>
+					<div class="header__endorsement" *ngIf="player.summary.endorsement">
+						<img [src]=player.summary.endorsement.frame class="endorsement__level" />
+					</div>
+				</div>
+				
+				<div class="header__right">
+					<div class="header__ranks" *ngIf="selectedPlatform !== 'all'">
+						<div class="rank__item" *ngFor="let rankData of getRanksForCurrentPlatform()">
+							<div class="rank__badge">
+								<img 
+									[src]="rankData.rank.rank_icon" 
+									[alt]="rankData.roleName + ' Rank'"
+									class="rank__icon"
+									(error)="onImageError($event)"
+								>
+								<img 
+									[src]="rankData.rank.tier_icon" 
+									[alt]="'Tier ' + rankData.rank.tier"
+									class="tier__icon"
+									(error)="onImageError($event)"
+								>
+							</div>
+							<span class="rank__role">{{ rankData.roleName }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Content -->
+		<div class="profile__content">
+			<!-- Left Section - Progression -->
+			<div class="content__left glass-card">
+				<div class="left__progression">
+					<div class="progression__level">
+						<div class="level__badge" *ngIf="player.summary.endorsement?.frame">
+							<img 
+								[src]="player.summary.endorsement!.frame" 
+								[alt]="'Endorsement Level ' + (player.summary.endorsement?.level || 'N/A')"
+								class="endorsement__frame"
+								(error)="onImageError($event)"
+							>
+						</div>
+						<span class="level__text">LEVEL {{ player.summary.endorsement?.level || 'N/A' }}</span>
+					</div>
+					
+					<div class="progression__time">
+						<h3>Time Played</h3>
+						<div class="time__total">
+							<span class="time__hours">{{ formatTime(getTotalTimePlayed()) }}</span>
+						</div>
+						
+						<div class="time__breakdown">
+							<div class="time__item">
+								<span class="time__icon">⚡</span>
+								<span class="time__mode">Quick Play</span>
+								<span class="time__value">{{ formatTime(getTotalTimePlayedForMode('quickplay')) }}</span>
+							</div>
+							<div class="time__item">
+								<span class="time__icon">🏆</span>
+								<span class="time__mode">Competitive</span>
+								<span class="time__value">{{ formatTime(getTotalTimePlayedForMode('competitive')) }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Middle Section - Most Played Heroes -->
+			<div class="content__middle glass-card">
+				<div class="middle__heroes">
+					<h3>Most Played Heroes</h3>
+					
+					<div class="heroes__list">
+						<div 
+							class="hero__item" 
+							*ngFor="let hero of getTopHeroes(3); let i = index"
+						>
+							<div class="hero__portrait">
+								<img 
+									[src]="getHeroImage(hero.hero)" 
+									[alt]="hero.hero"
+									class="portrait__image"
+								>
+							</div>
+							<div class="hero__info">
+								<span class="hero__name">{{ formatHeroName(hero.hero) }}</span>
+								<span class="hero__time">{{ formatTime(hero.value) }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="middle__roles">
+					<h3>Role Statistics</h3>
+					<div class="roles__table">
+						<div class="table__header">
+							<span class="header__role">ROLE</span>
+							<span class="header__time">TIME PLAYED</span>
+							<span class="header__games">GAMES WON</span>
+							<span class="header__winrate">WINRATE</span>
+						</div>
+						
+						<div class="table__row">
+							<span class="row__role">🛡️ Tank</span>
+							<span class="row__time">{{ formatTime(getRoleTimePlayed('tank')) }}</span>
+							<span class="row__games">{{ getRoleGamesWon('tank') }}</span>
+							<span class="row__winrate">{{ getRoleWinrate('tank').toFixed(1) }}%</span>
+						</div>
+						
+						<div class="table__row">
+							<span class="row__role">⚔️ Damage</span>
+							<span class="row__time">{{ formatTime(getRoleTimePlayed('damage')) }}</span>
+							<span class="row__games">{{ getRoleGamesWon('damage') }}</span>
+							<span class="row__winrate">{{ getRoleWinrate('damage').toFixed(1) }}%</span>
+						</div>
+						
+						<div class="table__row">
+							<span class="row__role">💚 Support</span>
+							<span class="row__time">{{ formatTime(getRoleTimePlayed('support')) }}</span>
+							<span class="row__games">{{ getRoleGamesWon('support') }}</span>
+							<span class="row__winrate">{{ getRoleWinrate('support').toFixed(1) }}%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Right Section - Hero Comparison -->
+			<div class="content__right glass-card">
+				<div class="right__comparison">
+					<h3>Hero Comparison</h3>
+					<div class="comparison__dropdown">
+						<select class="dropdown__select" [(ngModel)]="selectedComparisonType" (ngModelChange)="setComparisonType($event)">
+							<option value="time_played">TIME PLAYED</option>
+							<option value="games_won">GAMES WON</option>
+							<option value="win_percentage">WINRATE</option>
+						</select>
+					</div>
+					
+					<div class="comparison__list">
+						<div 
+							class="comparison__item" 
+							*ngFor="let hero of getTopHeroes(10)"
+						>
+							<div class="item__hero">
+								<img 
+									[src]="getHeroImage(hero.hero)" 
+									[alt]="hero.hero"
+									class="hero__thumbnail"
+								>
+								<span class="hero__name">{{ formatHeroName(hero.hero) }}</span>
+							</div>
+							
+							<div class="item__bar">
+								<div 
+									class="bar__fill" 
+									[style.width.%]="getHeroPercentage(hero.value)"
+								></div>
+							</div>
+							
+							<span class="item__value">{{ formatComparisonValue(hero.value) }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

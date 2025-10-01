@@ -1,0 +1,23 @@
+<div class="container__hero-card">
+	<!-- Loading State -->
+	<div *ngIf="loading" class="hero-card__loading glass-card">
+		<app-loading-spinner 
+			size="medium" 
+			message="Loading heroes..." 
+			[showMessage]="true">
+		</app-loading-spinner>
+	</div>
+
+	<!-- Heroes List -->
+	<ul *ngIf="!loading">
+		<li *ngFor="let hero of filteredHeroes">
+			<a [routerLink]="['/herolist', hero.key]">
+				<img [src]="hero.portrait" alt="{{ hero.name }}" height="225" />
+				<div class="hero__description">
+					<span>{{ hero.role }}</span>
+					<h3>{{ hero.name }}</h3>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>

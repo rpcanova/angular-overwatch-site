@@ -1,0 +1,22 @@
+<div class="container__map-card">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="map-card__loading glass-card">
+        <app-loading-spinner 
+            size="medium" 
+            message="Loading maps..." 
+            [showMessage]="true">
+        </app-loading-spinner>
+    </div>
+
+    <!-- Maps List -->
+    <ul *ngIf="!loading">
+        <li *ngFor="let map of filteredMaps">
+            <img [src]="map.screenshot" alt="{{ map.name }}" height="100">
+
+            <div class="map__description">
+                <h4>{{ map.name }}</h4>
+                <span>{{ map.location }}</span>
+            </div>
+        </li>
+    </ul>
+</div>

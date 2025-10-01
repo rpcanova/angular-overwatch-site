@@ -1,0 +1,12 @@
+<div class="profile__nav glass-card">
+	<div class="nav__tabs">
+		<button 
+			*ngFor="let tab of tabs"
+			class="nav__tab" 
+			[class.nav__tab--active]="activeTab === tab"
+			(click)="onTabClick(tab)"
+		>
+			{{ tabLabels[tab] || tab }}
+		</button>
+	</div>
+</div>

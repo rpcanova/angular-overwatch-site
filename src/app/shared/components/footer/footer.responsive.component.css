@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    .container__footer {
+        height: 3rem;
+    }
+    
+    .container__footer p {
+        font-size: 0.8rem;
+    }
+}
