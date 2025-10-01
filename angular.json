@@ -39,14 +39,7 @@
 						],
 						"scripts": [],
 						"server": "src/main.server.ts",
-						"prerender": {
-							"routes": [
-								"/",
-								"/herolist",
-								"/maplist",
-								"/playerlist"
-							]
-						},
+						"prerender": false,
 						"ssr": {
 							"entry": "server.ts"
 						}
