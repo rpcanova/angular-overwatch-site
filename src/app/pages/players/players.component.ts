@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PlayerService } from '../../services/player.service';
 import { HeroService } from '../../services/hero.service';
 import { PlayerData, HeroComparison, HeroValue } from '../../models/playerData';
 import { HeroData } from '../../models/heroData';
 import { Subscription, timeout, catchError, of } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
 	selector: 'app-players',
@@ -32,15 +33,21 @@ export class PlayersComponent implements OnInit, OnDestroy {
 		private playerService: PlayerService,
 		private heroService: HeroService,
 		private router: Router,
-		private route: ActivatedRoute
+		private route: ActivatedRoute,
+		@Inject(PLATFORM_ID) private platformId: Object
 	) {}
 
 	ngOnInit(): void {
-		this.updateTime();
-		this.timeInterval = setInterval(() => this.updateTime(), 1000);
+		// Only run browser-specific code on the client side
+		if (isPlatformBrowser(this.platformId)) {
+			this.updateTime();
+			this.timeInterval = setInterval(() => this.updateTime(), 1000);
+		}
 		
-		// Load heroes data for images
-		this.loadHeroes();
+		// Load heroes data for images (only on browser)
+		if (isPlatformBrowser(this.platformId)) {
+			this.loadHeroes();
+		}
 		
 		// Check if we're on a specific player route
 		this.routeSubscription = this.route.params.subscribe(params => {
@@ -51,7 +58,11 @@ export class PlayersComponent implements OnInit, OnDestroy {
 				// Convert back from URL format (RafaelCnv-1407) to BattleTag format (RafaelCnv#1407)
 				const convertedBattletag = battletag.replace('-', '#');
 				this.searchInput = convertedBattletag;
-				this.searchPlayer(convertedBattletag);
+				
+				// Only search player on browser side to avoid SSR issues
+				if (isPlatformBrowser(this.platformId)) {
+					this.searchPlayer(convertedBattletag);
+				}
 			} else {
 				this.isSearchPage = true;
 			}
@@ -434,14 +445,17 @@ export class PlayersComponent implements OnInit, OnDestroy {
 	}
 
 	loadHeroes(): void {
-		this.heroService.getAllHeroes().subscribe({
-			next: (heroes: HeroData[]) => {
-				this.heroes = heroes;
-			},
-			error: (err: any) => {
-				console.error('Error loading heroes:', err);
-			}
-		});
+		// Only load heroes on browser side to avoid SSR issues
+		if (isPlatformBrowser(this.platformId)) {
+			this.heroService.getAllHeroes().subscribe({
+				next: (heroes: HeroData[]) => {
+					this.heroes = heroes;
+				},
+				error: (err: any) => {
+					console.error('Error loading heroes:', err);
+				}
+			});
+		}
 	}
 
 	getHeroImage(heroName: string): string {

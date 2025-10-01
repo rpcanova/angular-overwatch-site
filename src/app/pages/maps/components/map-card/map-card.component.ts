@@ -1,6 +1,7 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, Inject, PLATFORM_ID } from '@angular/core';
 import { MapData } from '../../../../models/mapData';
 import { MapService } from '../../../../services/map.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
     selector: 'app-map-card',
@@ -13,10 +14,16 @@ export class MapCardComponent implements OnInit, OnChanges {
     loading: boolean = true
     @Input() activeFilter: string = 'ALL'
 
-    constructor(private service: MapService) { }
+    constructor(
+        private service: MapService,
+        @Inject(PLATFORM_ID) private platformId: Object
+    ) { }
 
     ngOnInit(): void {
-        this.getAllMaps()
+        // Only load maps on browser side to avoid SSR issues
+        if (isPlatformBrowser(this.platformId)) {
+            this.getAllMaps()
+        }
     }
 
     ngOnChanges(changes: SimpleChanges): void {

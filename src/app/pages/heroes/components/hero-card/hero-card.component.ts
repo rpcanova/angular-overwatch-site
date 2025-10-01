@@ -1,6 +1,7 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, Inject, PLATFORM_ID } from '@angular/core';
 import { HeroData } from '../../../../models/heroData';
 import { HeroService } from '../../../../services/hero.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
     selector: 'app-hero-card',
@@ -13,10 +14,16 @@ export class HeroCardComponent implements OnInit, OnChanges {
     loading: boolean = true
     @Input() activeFilter: string = 'ALL'
 
-    constructor(private service: HeroService) { }
+    constructor(
+        private service: HeroService,
+        @Inject(PLATFORM_ID) private platformId: Object
+    ) { }
 
     ngOnInit(): void {
-        this.getAllHeroes()
+        // Only load heroes on browser side to avoid SSR issues
+        if (isPlatformBrowser(this.platformId)) {
+            this.getAllHeroes()
+        }
     }
 
     ngOnChanges(changes: SimpleChanges): void {
